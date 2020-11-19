@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "255546602841",
+    "firebase_url": "https://chatme-ttk-37041.firebaseio.com",
+    "project_id": "chatme-ttk-37041",
+    "storage_bucket": "chatme-ttk-37041.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255546602841:android:765965d49c5320cf108848",
+        "android_client_info": {
+          "package_name": "com.eatuitive.nutrition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255546602841-iqag5l0ns05o1o2gqjqdmt8saib2dt8l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eatuitive.nutrition",
+            "certificate_hash": "c38bb859ff395dd11729faa82ad5b60d92145c36"
+          }
+        },
+        {
+          "client_id": "255546602841-45veo9qjjhlnb141aijlouj6r26svv72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtbIGfKInbeOijv_dDeg4WuE1rDQcLDeE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255546602841-45veo9qjjhlnb141aijlouj6r26svv72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

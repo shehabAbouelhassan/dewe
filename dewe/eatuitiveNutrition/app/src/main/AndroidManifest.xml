@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eatuitive.nutrition">
+    <!-- Internet Permission  -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.eatuitive.nutrition.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.eatuitive.nutrition.SettingActivity"></activity>
+        <activity android:name="com.eatuitive.nutrition.PostLikedByActivity" />
+        <activity android:name="com.eatuitive.nutrition.PostDetailActivity" />
+        <activity android:name="com.eatuitive.nutrition.ThereProfileActivity" />
+
+        <!--Intent filters inform the system what intents an application component is willing to
+        accept. To receive text/image type of intents i'm gonna add intent filter to activity, that will handle the data-->
+
+        <activity android:name="com.eatuitive.nutrition.AddPostActivity">
+            <intent-filter>
+                <!--For Image -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <!--For Text -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.eatuitive.nutrition.ChatActivity"
+            android:theme="@style/AppThemeNo" />
+        <activity android:name="com.eatuitive.nutrition.LoginActivity" />
+        <activity android:name="com.eatuitive.nutrition.DashboardActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.eatuitive.nutrition.RegisterActivity" />
+        <activity android:name="com.eatuitive.nutrition.MainActivity" />
+
+        <service
+            android:name="com.eatuitive.nutrition.notifications.FirebaseMessaging"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <!--define file provider -->
+        <!--set the android: exported attribute to false;
+         the FileProvider does not need to be public.-->
+        <!--Set the android:grantedUriPermissions attributes to true,
+         to allow you to grant temporary access to files-->
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.eatuitive.nutrition.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+    </application>
+
+</manifest>
