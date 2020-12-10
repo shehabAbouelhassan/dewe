@@ -31,14 +31,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //start Register Activity
-                startActivity(new Intent(com.eatuitive.nutrition.MainActivity.this, RegisterActivity.class));
+                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
         });
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(com.eatuitive.nutrition.MainActivity.this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
     }

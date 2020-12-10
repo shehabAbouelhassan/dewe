@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
         mHaveAccountTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(com.eatuitive.nutrition.RegisterActivity.this, com.eatuitive.nutrition.LoginActivity.class));
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 finish();
             }
         });
@@ -143,15 +143,15 @@ public class RegisterActivity extends AppCompatActivity {
                             //put data within hashmap in database
                             reference.child(uid).setValue(hashMap);
 
-                            Toast.makeText(com.eatuitive.nutrition.RegisterActivity.this, "Registered " + user.getEmail(), Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(com.eatuitive.nutrition.RegisterActivity.this, com.eatuitive.nutrition.DashboardActivity.class));
+                            Toast.makeText(RegisterActivity.this, "Registered " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, DashboardActivity.class));
                             finish();
 
 
                         } else {
                             // If sign in fails, display a message to the user.
                             progressDialog.dismiss();
-                            Toast.makeText(com.eatuitive.nutrition.RegisterActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
 
 
                         }
@@ -161,7 +161,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 //error, dismiss progress dialog and get and show the error message
                 progressDialog.dismiss();
-                Toast.makeText(com.eatuitive.nutrition.RegisterActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
 
 //                String email1 = mEmailEt.getText().toString();
 //                String password1 = mPasswordEt.getText().toString();

@@ -154,7 +154,7 @@ public class ThereProfileActivity extends AppCompatActivity {
 
                     postList.add(myPosts);
 
-                    adapterPosts = new AdapterPosts(com.eatuitive.nutrition.ThereProfileActivity.this, postList);
+                    adapterPosts = new AdapterPosts(ThereProfileActivity.this, postList);
 
                     postsRecyclerView.setAdapter(adapterPosts);
                 }
@@ -162,7 +162,7 @@ public class ThereProfileActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(com.eatuitive.nutrition.ThereProfileActivity.this, ""+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ThereProfileActivity.this, ""+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -171,7 +171,7 @@ public class ThereProfileActivity extends AppCompatActivity {
     private void searchHisPosts(final String searchQuery) {
 //linear layout for recyclerview
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(com.eatuitive.nutrition.ThereProfileActivity.this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(ThereProfileActivity.this);
         //show newest post first, for this load from last
         layoutManager.setStackFromEnd(true);
         layoutManager.setReverseLayout(true);
@@ -203,7 +203,7 @@ public class ThereProfileActivity extends AppCompatActivity {
 
 
                     //adapter
-                    adapterPosts = new AdapterPosts(com.eatuitive.nutrition.ThereProfileActivity.this, postList);
+                    adapterPosts = new AdapterPosts(ThereProfileActivity.this, postList);
                     //set adapter to recyclerview
                     postsRecyclerView.setAdapter(adapterPosts);
                 }
@@ -211,7 +211,7 @@ public class ThereProfileActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(com.eatuitive.nutrition.ThereProfileActivity.this, ""+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ThereProfileActivity.this, ""+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -227,7 +227,7 @@ public class ThereProfileActivity extends AppCompatActivity {
 
         } else {
             //user not signed in, go to main activity
-            startActivity(new Intent(this, com.eatuitive.nutrition.MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
     }

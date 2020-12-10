@@ -86,7 +86,7 @@ public class PostLikedByActivity extends AppCompatActivity {
                        userList.add(modelUser);
                    }
                    //setup adapter
-                   adapterUsers = new AdapterUsers(com.eatuitive.nutrition.PostLikedByActivity.this, userList);
+                   adapterUsers = new AdapterUsers(PostLikedByActivity.this, userList);
                     //set adapter to recyclerview
                         recyclerView.setAdapter(adapterUsers);
                     }

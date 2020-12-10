@@ -152,7 +152,7 @@ public class HomeFragment extends Fragment {
 
         } else {
             //user not signed in, go to main activity
-            startActivity(new Intent(getActivity(), com.eatuitive.nutrition.MainActivity.class));
+            startActivity(new Intent(getActivity(), MainActivity.class));
             getActivity().finish();
         }
     }
@@ -212,7 +212,7 @@ public class HomeFragment extends Fragment {
         }
 
         else if(id == R.id.action_add_post){
-            startActivity(new Intent(getActivity(), com.eatuitive.nutrition.AddPostActivity.class));
+            startActivity(new Intent(getActivity(), AddPostActivity.class));
         }
         else if (id == R.id.action_settings){
             //go to settignsActivity

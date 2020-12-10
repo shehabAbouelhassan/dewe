@@ -81,7 +81,7 @@ public class SettingActivity extends AppCompatActivity {
                         if (!task.isSuccessful()){
                             msg = "UnSubscription failed";
                         }
-                        Toast.makeText(com.eatuitive.nutrition.SettingActivity.this, msg, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SettingActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -97,7 +97,7 @@ public class SettingActivity extends AppCompatActivity {
                         if (!task.isSuccessful()){
                             msg = "Subscription failed";
                         }
-                        Toast.makeText(com.eatuitive.nutrition.SettingActivity.this, msg, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SettingActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
     }

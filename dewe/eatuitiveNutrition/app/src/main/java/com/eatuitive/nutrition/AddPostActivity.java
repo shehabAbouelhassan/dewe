@@ -196,11 +196,11 @@ public class AddPostActivity extends AppCompatActivity {
                 String description = descriptionEt.getText().toString().trim();
 
                 if (TextUtils.isEmpty(title)) {
-                    Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, "Title empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPostActivity.this, "Title empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (TextUtils.isEmpty(description)) {
-                    Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, "description empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPostActivity.this, "description empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -254,13 +254,13 @@ public class AddPostActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
                         pd.dismiss();
-                        Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, "Updated...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddPostActivity.this, "Updated...", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 pd.dismiss();
-                Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -333,13 +333,13 @@ public class AddPostActivity extends AppCompatActivity {
                                                         @Override
                                                         public void onSuccess(Void aVoid) {
                                                             pd.dismiss();
-                                                            Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, "Updated...", Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(AddPostActivity.this, "Updated...", Toast.LENGTH_SHORT).show();
                                                         }
                                                     }).addOnFailureListener(new OnFailureListener() {
                                                         @Override
                                                         public void onFailure(@NonNull Exception e) {
                                                             pd.dismiss();
-                                                            Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                                                         }
                                                     });
 
@@ -350,7 +350,7 @@ public class AddPostActivity extends AppCompatActivity {
                             public void onFailure(@NonNull Exception e) {
                                 // image not uploaded
                                 pd.dismiss();
-                                Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -359,7 +359,7 @@ public class AddPostActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 pd.dismiss();
-                Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -406,13 +406,13 @@ public class AddPostActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Void aVoid) {
                                             pd.dismiss();
-                                            Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, "Updated...", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(AddPostActivity.this, "Updated...", Toast.LENGTH_SHORT).show();
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     pd.dismiss();
-                                    Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
 
@@ -422,7 +422,7 @@ public class AddPostActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 pd.dismiss();
-                Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -524,9 +524,9 @@ public class AddPostActivity extends AppCompatActivity {
                                                 //added in database
                                                 //failed uploading image
                                                 pd.dismiss();
-                                                Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, "Post published", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(AddPostActivity.this, "Post published", Toast.LENGTH_SHORT).show();
 
-                                                startActivity(new Intent(com.eatuitive.nutrition.AddPostActivity.this, DashboardActivity.class));
+                                                startActivity(new Intent(AddPostActivity.this, DashboardActivity.class));
 
                                                 titleEt.setText("");
                                                 descriptionEt.setText("");
@@ -548,7 +548,7 @@ public class AddPostActivity extends AppCompatActivity {
                                     public void onFailure(@NonNull Exception e) {
                                         //failed adding post to database
                                         pd.dismiss();
-                                        Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
                                 });
 
@@ -558,7 +558,7 @@ public class AddPostActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     pd.dismiss();
-                    Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -587,10 +587,10 @@ public class AddPostActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void aVoid) {
                             pd.dismiss();
-                            Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, "Post published", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddPostActivity.this, "Post published", Toast.LENGTH_SHORT).show();
 
 
-                            startActivity(new Intent(com.eatuitive.nutrition.AddPostActivity.this, DashboardActivity.class));
+                            startActivity(new Intent(AddPostActivity.this, DashboardActivity.class));
                             //reset views
                             titleEt.setText("");
                             descriptionEt.setText("");
@@ -610,7 +610,7 @@ public class AddPostActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     pd.dismiss();
-                    Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -663,7 +663,7 @@ public class AddPostActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 //error occured
-                Toast.makeText(com.eatuitive.nutrition.AddPostActivity.this, ""+error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddPostActivity.this, ""+error.toString(), Toast.LENGTH_SHORT).show();
             }
         })
         {
@@ -792,7 +792,7 @@ public class AddPostActivity extends AppCompatActivity {
 
         } else {
             //user not signed in, go to main activity
-            startActivity(new Intent(this, com.eatuitive.nutrition.MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
     }

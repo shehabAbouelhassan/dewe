@@ -130,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
         notHaveAccountTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(com.eatuitive.nutrition.LoginActivity.this, RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 finish();
             }
         });
@@ -209,9 +209,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     progressDialog.dismiss();
-                    Toast.makeText(com.eatuitive.nutrition.LoginActivity.this, "Please check your Email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Please check your Email", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(com.eatuitive.nutrition.LoginActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -219,7 +219,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 // get and show proper error message
                 progressDialog.dismiss();
-                Toast.makeText(com.eatuitive.nutrition.LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -238,13 +238,13 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
                             //user is logged in, so start LoginActivity
-                            startActivity(new Intent(com.eatuitive.nutrition.LoginActivity.this, DashboardActivity.class));
+                            startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                             finish();
                         } else {
                             //dismiss progress dialog
                             // If sign in fails, display a message to the user.
                             progressDialog.dismiss();
-                            Toast.makeText(com.eatuitive.nutrition.LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -254,7 +254,7 @@ public class LoginActivity extends AppCompatActivity {
                 //error, get and show error message
                 progressDialog.dismiss();
                 //if sign in fails, display am essage to the user
-                Toast.makeText(com.eatuitive.nutrition.LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -327,13 +327,13 @@ public class LoginActivity extends AppCompatActivity {
                             //show user email in toast
 
                             //go to profile activity after logged in
-                            Toast.makeText(com.eatuitive.nutrition.LoginActivity.this, ""+user.getEmail(), Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(com.eatuitive.nutrition.LoginActivity.this, DashboardActivity.class));
+                            Toast.makeText(LoginActivity.this, ""+user.getEmail(), Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                             finish();
                            // updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(com.eatuitive.nutrition.LoginActivity.this, "Failed..", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Failed..", Toast.LENGTH_SHORT).show();
                            // updateUI(null);
                         }
 
@@ -343,7 +343,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 //get and show error message
-                Toast.makeText(com.eatuitive.nutrition.LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

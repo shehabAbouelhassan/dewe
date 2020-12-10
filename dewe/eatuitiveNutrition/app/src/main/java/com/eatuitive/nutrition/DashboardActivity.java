@@ -125,7 +125,7 @@ public class DashboardActivity extends AppCompatActivity {
                             //notification fragment transaction
 
                             actionBar.setTitle("Notifications");//change actionbar title
-                            com.eatuitive.nutrition.NotificationsFragment fragment5 = new com.eatuitive.nutrition.NotificationsFragment();
+                            NotificationsFragment fragment5 = new NotificationsFragment();
                             FragmentTransaction ft5 = getSupportFragmentManager().beginTransaction();
                             ft5.replace(R.id.content, fragment5, "");
                             ft5.commit();
@@ -155,7 +155,7 @@ public class DashboardActivity extends AppCompatActivity {
             updateToken(FirebaseInstanceId.getInstance().getToken());
         }else{
             //user not signed in, go to main activity
-            startActivity(new Intent(com.eatuitive.nutrition.DashboardActivity.this, com.eatuitive.nutrition.MainActivity.class));
+            startActivity(new Intent(DashboardActivity.this, MainActivity.class));
             finish();
         }
     }

@@ -91,7 +91,7 @@ public class UsersFragment extends Fragment {
                 //get all users except currently signed in user
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
                     ModelUser modelUser = ds.getValue(ModelUser.class);
-                    if(modelUser.getUid() != null && modelUser.getUid().equals(fUser.getUid())) {
+                    if(modelUser.getUid() != null && !modelUser.getUid().equals(fUser.getUid())) {
                         userList.add(modelUser);
                     }
                     //adapter
@@ -163,7 +163,7 @@ public class UsersFragment extends Fragment {
 
         } else {
             //user is not signed in, go to main activivty
-            startActivity(new Intent(getActivity(), com.eatuitive.nutrition.MainActivity.class));
+            startActivity(new Intent(getActivity(), MainActivity.class));
             getActivity().finish();
         }
     }

@@ -21,7 +21,8 @@
         <activity android:name="com.eatuitive.nutrition.ThereProfileActivity" />
 
         <!--Intent filters inform the system what intents an application component is willing to
-        accept. To receive text/image type of intents i'm gonna add intent filter to activity, that will handle the data-->
+        accept. To receive text/image type of intents i'm gonna add intent filter to activity,
+         that will handle the data-->
 
         <activity android:name="com.eatuitive.nutrition.AddPostActivity">
             <intent-filter>

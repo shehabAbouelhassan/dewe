@@ -171,7 +171,7 @@ public class ChatListFragment extends Fragment {
 
         } else {
             //user is not signed in, go to main activivty
-            startActivity(new Intent(getActivity(), com.eatuitive.nutrition.MainActivity.class));
+            startActivity(new Intent(getActivity(), MainActivity.class));
             getActivity().finish();
         }
     }

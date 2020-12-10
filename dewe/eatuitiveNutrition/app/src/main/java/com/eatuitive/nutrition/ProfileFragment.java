@@ -777,7 +777,7 @@ public class ProfileFragment extends Fragment {
             uid = user.getUid();
         } else {
             //user not signed in, go to main activity
-            startActivity(new Intent(getActivity(), com.eatuitive.nutrition.MainActivity.class));
+            startActivity(new Intent(getActivity(), MainActivity.class));
             getActivity().finish();
         }
     }
@@ -839,7 +839,7 @@ public class ProfileFragment extends Fragment {
         }
         else if(id == R.id.action_add_post){
             //go to settignsActivity
-            startActivity(new Intent(getActivity(), com.eatuitive.nutrition.AddPostActivity.class));
+            startActivity(new Intent(getActivity(), AddPostActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

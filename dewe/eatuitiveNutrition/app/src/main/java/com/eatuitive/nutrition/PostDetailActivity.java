@@ -249,7 +249,7 @@ public class PostDetailActivity extends AppCompatActivity {
             uri = FileProvider.getUriForFile(this, "com.eatuitive.nutrition.fileprovider", file);
 
         } catch (Exception e) {
-            Toast.makeText(com.eatuitive.nutrition.PostDetailActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(PostDetailActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return uri;
     }
@@ -324,7 +324,7 @@ public class PostDetailActivity extends AppCompatActivity {
                 }else if (id == 1) {
                     //Edit is clicked
                     //start AddPostActivity with key "editPost" and the id of the post clicked
-                    Intent intent = new Intent(com.eatuitive.nutrition.PostDetailActivity.this, com.eatuitive.nutrition.AddPostActivity.class);
+                    Intent intent = new Intent(PostDetailActivity.this, AddPostActivity.class);
                     intent.putExtra("key", "editPost");
                     intent.putExtra("editPostId", postId);
                     startActivity(intent);
@@ -372,7 +372,7 @@ public class PostDetailActivity extends AppCompatActivity {
                                     ds.getRef().removeValue();//remove values from firebase where pid matches
                                 }
                                 //deleated
-                                Toast.makeText(com.eatuitive.nutrition.PostDetailActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PostDetailActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
                                 pd.dismiss();
                             }
 
@@ -387,7 +387,7 @@ public class PostDetailActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 //failed, can't go further
                 pd.dismiss();
-                Toast.makeText(com.eatuitive.nutrition.PostDetailActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PostDetailActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -402,7 +402,7 @@ public class PostDetailActivity extends AppCompatActivity {
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
                     ds.getRef().removeValue();
                 }
-                Toast.makeText(com.eatuitive.nutrition.PostDetailActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PostDetailActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
                 pd.dismiss();
             }
 
@@ -523,7 +523,7 @@ public class PostDetailActivity extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         //added
                         pd.dismiss();
-                        Toast.makeText(com.eatuitive.nutrition.PostDetailActivity.this, "comment added", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PostDetailActivity.this, "comment added", Toast.LENGTH_SHORT).show();
                         commentEt.setText("");
                         updateCommentCount();
 
@@ -534,7 +534,7 @@ public class PostDetailActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 //failed, not added
                 pd.dismiss();
-                Toast.makeText(com.eatuitive.nutrition.PostDetailActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PostDetailActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -601,7 +601,7 @@ public class PostDetailActivity extends AppCompatActivity {
 
         }else{
             // user not signed in, go to main activity
-            startActivity(new Intent(com.eatuitive.nutrition.PostDetailActivity.this, com.eatuitive.nutrition.MainActivity.class));
+            startActivity(new Intent(PostDetailActivity.this, MainActivity.class));
             finish();
         }
     }

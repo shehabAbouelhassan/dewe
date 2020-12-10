@@ -243,7 +243,7 @@ public class ChatActivity extends AppCompatActivity {
                 //check if text is empty or not
                 if(TextUtils.isEmpty(message)){
                     //text empty
-                    Toast.makeText(com.eatuitive.nutrition.ChatActivity.this, "write something", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChatActivity.this, "write something", Toast.LENGTH_SHORT).show();
                 }else{
                     //text not empty
                     sendMessage(message);                    
@@ -341,14 +341,14 @@ public class ChatActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(com.eatuitive.nutrition.ChatActivity.this, "Blocked Successfully...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ChatActivity.this, "Blocked Successfully...", Toast.LENGTH_SHORT).show();
 
                         blockIv.setImageResource(R.drawable.ic_blocked_red);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(com.eatuitive.nutrition.ChatActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ChatActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -367,7 +367,7 @@ public class ChatActivity extends AppCompatActivity {
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                Toast.makeText(com.eatuitive.nutrition.ChatActivity.this, "Unblocked Successfully...", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(ChatActivity.this, "Unblocked Successfully...", Toast.LENGTH_SHORT).show();
 
                                                 blockIv.setImageResource(R.drawable.ic_unblocked_green);
                                             }
@@ -375,7 +375,7 @@ public class ChatActivity extends AppCompatActivity {
                                         .addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(com.eatuitive.nutrition.ChatActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(ChatActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                                             }
                                         });
                             }
@@ -498,7 +498,7 @@ public class ChatActivity extends AppCompatActivity {
                     }
 
                     //adapter
-                    adapterChat = new AdapterChat(com.eatuitive.nutrition.ChatActivity.this, chatList, hisImage);
+                    adapterChat = new AdapterChat(ChatActivity.this, chatList, hisImage);
                     adapterChat.notifyDataSetChanged();
                     //set adapter to recyclerview
                     recyclerView.setAdapter(adapterChat);
@@ -695,7 +695,7 @@ public class ChatActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
                         //failed
                         progressDialog.dismiss();
-                        Toast.makeText(com.eatuitive.nutrition.ChatActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ChatActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -776,7 +776,7 @@ public class ChatActivity extends AppCompatActivity {
 
         } else {
             //user is not signed in, go to main activivty
-            startActivity(new Intent(this, com.eatuitive.nutrition.MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
 
